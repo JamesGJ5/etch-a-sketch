@@ -8,16 +8,19 @@ function styleGrid(grid) {
     grid.style.flexWrap = 'wrap';
 }
 
-function createGrid(squaresPerRow) {
-    // TODO: vertically-center the grid in the window
-    const grid = document.querySelector('div');
-    styleGrid(grid);
-
+function resetGridSquares(grid) {
     let child = grid.lastElementChild;
     while (child) {
         grid.removeChild(child);
         child = grid.lastElementChild;
     }
+}
+
+function createGrid(squaresPerRow) {
+    // TODO: vertically-center the grid in the window
+    const grid = document.querySelector('div');
+    styleGrid(grid);
+    resetGridSquares(grid);
 
     gridPercentageOfWindow = 100;
     grid.style.width = `${gridPercentageOfWindow}vmin`;
