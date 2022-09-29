@@ -2,6 +2,8 @@ const body = document.querySelector('body');
 body.style.margin = '0';
 
 const containerDiv = document.querySelector('div');
+containerDiv.style.marginLeft = 'auto';
+containerDiv.style.marginRight = 'auto';
 containerDiv.style.display = 'flex';
 containerDiv.style.flexWrap = 'wrap';
 
