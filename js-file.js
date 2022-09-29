@@ -24,3 +24,8 @@ for (i = 0; i < squaresPerRow ** 2; i++) {
 
     grid.appendChild(gridSquare);
 }
+
+let gridSquareList = grid.childNodes;
+
+gridSquareList.forEach((gridSquare) => {
+});
