@@ -6,6 +6,9 @@ function styleGrid(grid) {
     grid.style.marginRight = 'auto';
     grid.style.display = 'flex';
     grid.style.flexWrap = 'wrap';
+    gridPercentageOfWindow = 100;
+    grid.style.width = `${gridPercentageOfWindow}vmin`;
+    grid.style.height = grid.style.width;
 }
 
 function resetGridSquares(grid) {
@@ -21,10 +24,6 @@ function createGrid(squaresPerRow) {
     const grid = document.querySelector('div');
     styleGrid(grid);
     resetGridSquares(grid);
-
-    gridPercentageOfWindow = 100;
-    grid.style.width = `${gridPercentageOfWindow}vmin`;
-    grid.style.height = grid.style.width;
 
     for (i = 0; i < squaresPerRow ** 2; i++) {
         
