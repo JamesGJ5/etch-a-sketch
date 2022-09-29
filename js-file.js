@@ -9,6 +9,12 @@ function createGrid(squaresPerRow) {
     grid.style.display = 'flex';
     grid.style.flexWrap = 'wrap';
 
+    let child = grid.lastElementChild;
+    while (child) {
+        grid.removeChild(child);
+        child = grid.lastElementChild;
+    }
+
     gridPercentageOfWindow = 100;
     grid.style.width = `${gridPercentageOfWindow}vmin`;
     grid.style.height = grid.style.width;
