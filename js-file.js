@@ -64,6 +64,6 @@ button.addEventListener('click', () => {
 // 3. DONE Add event listener to button to display prompt when clicked asking for 
 // grid size
 // 4. DONE Call function with grid size
-// 5. Make sure function resets
+// 5. DONE Make sure function resets
 // 6. Limit the grid size that may be asked for
 // 7. Clean up function
