@@ -1,13 +1,17 @@
 const body = document.querySelector('body');
 body.style.margin = '0';
 
-function createGrid(squaresPerRow) {
-    // TODO: vertically-center the grid in the window
-    const grid = document.querySelector('div');
+function styleGrid(grid) {
     grid.style.marginLeft = 'auto';
     grid.style.marginRight = 'auto';
     grid.style.display = 'flex';
     grid.style.flexWrap = 'wrap';
+}
+
+function createGrid(squaresPerRow) {
+    // TODO: vertically-center the grid in the window
+    const grid = document.querySelector('div');
+    styleGrid(grid);
 
     let child = grid.lastElementChild;
     while (child) {
