@@ -53,6 +53,8 @@ function createGrid(squaresPerRow) {
 };
 
 const button = document.querySelector('button');
+button.style.display = 'block';
+button.style.width = '100%';
 
 let squaresPerRow;
 button.addEventListener('click', () => {
