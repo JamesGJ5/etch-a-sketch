@@ -1,11 +1,11 @@
-const containerDiv = document.querySelector('div')
-containerDiv.style.display = 'flex'
-containerDiv.style.flexWrap = 'wrap'
+const containerDiv = document.querySelector('div');
+containerDiv.style.display = 'flex';
+containerDiv.style.flexWrap = 'wrap';
 
 containerViewportWidthProportion = 100;
-containerDiv.style.width = `${containerViewportWidthProportion}vw`
+containerDiv.style.width = `${containerViewportWidthProportion}vw`;
 
-const squaresPerRow = 16
+const squaresPerRow = 16;
 for (i = 0; i < squaresPerRow ** 2; i++) {
     
     const gridSquare = document.createElement('div');
