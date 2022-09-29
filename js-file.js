@@ -1,6 +1,7 @@
 const body = document.querySelector('body');
 body.style.margin = '0';
 
+// TODO: vertically-center the grid in the window
 const grid = document.querySelector('div');
 grid.style.marginLeft = 'auto';
 grid.style.marginRight = 'auto';
