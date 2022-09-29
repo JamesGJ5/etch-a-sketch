@@ -54,8 +54,12 @@ function createGrid(squaresPerRow) {
 
 const button = document.querySelector('button');
 
+let squaresPerRow
 button.addEventListener('click', () => {
-    squaresPerRow = +prompt('How many squares would you like per grid row?');
+    squaresPerRow = Infinity;
+    while (squaresPerRow > 100) {
+        squaresPerRow = +prompt('How many squares would you like per grid row?\n100 is the maximum.');
+    };
     createGrid(squaresPerRow);
 });
 
