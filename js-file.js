@@ -18,16 +18,17 @@ function resetGridSquares(grid) {
     }
 }
 
+function styleGridSquare(gridSquare) {
+    gridSquare.style.boxSizing = 'border-box';
+    gridSquare.style.width = `${100 / squaresPerRow}vmin`;
+    gridSquare.style.height = gridSquare.style.width;
+    gridSquare.style.border = 'solid black 3px';
+}
+
 function createGridSquares(grid, squaresPerRow) {
     for (i = 0; i < squaresPerRow ** 2; i++) {
-        
         const gridSquare = document.createElement('div');
-
-        gridSquare.style.boxSizing = 'border-box';
-        gridSquare.style.width = `${100 / squaresPerRow}vmin`;
-        gridSquare.style.height = gridSquare.style.width;
-        gridSquare.style.border = 'solid black 3px';
-
+        styleGridSquare(gridSquare)
         grid.appendChild(gridSquare);
     }
 }
