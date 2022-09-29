@@ -22,7 +22,7 @@ function styleGridSquare(gridSquare) {
     gridSquare.style.boxSizing = 'border-box';
     gridSquare.style.width = `${100 / squaresPerRow}vmin`;
     gridSquare.style.height = gridSquare.style.width;
-    gridSquare.style.border = 'solid black 3px';
+    gridSquare.style.border = 'solid black 1px';
 }
 
 function createGridSquares(grid, squaresPerRow) {
