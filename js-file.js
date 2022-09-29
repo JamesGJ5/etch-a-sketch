@@ -18,12 +18,7 @@ function resetGridSquares(grid) {
     }
 }
 
-function createGrid(squaresPerRow) {
-    // TODO: vertically-center the grid in the window
-    const grid = document.querySelector('div');
-    styleGrid(grid);
-    resetGridSquares(grid);
-
+function createGridSquares(grid, squaresPerRow) {
     for (i = 0; i < squaresPerRow ** 2; i++) {
         
         const gridSquare = document.createElement('div');
@@ -35,6 +30,14 @@ function createGrid(squaresPerRow) {
 
         grid.appendChild(gridSquare);
     }
+}
+
+function createGrid(squaresPerRow) {
+    // TODO: vertically-center the grid in the window
+    const grid = document.querySelector('div');
+    styleGrid(grid);
+    resetGridSquares(grid);
+    createGridSquares(grid, squaresPerRow)
 
     let gridSquareList = grid.childNodes;
 
