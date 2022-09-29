@@ -33,13 +33,7 @@ function createGridSquares(grid, squaresPerRow) {
     }
 }
 
-function createGrid(squaresPerRow) {
-    // TODO: vertically-center the grid in the window
-    const grid = document.querySelector('div');
-    styleGrid(grid);
-    resetGridSquares(grid);
-    createGridSquares(grid, squaresPerRow)
-
+function makeEtchable(grid) {
     let gridSquareList = grid.childNodes;
 
     gridSquareList.forEach((gridSquare) => {
@@ -47,6 +41,15 @@ function createGrid(squaresPerRow) {
             gridSquare.style.backgroundColor = 'black';
         });
     });
+}
+
+function createGrid(squaresPerRow) {
+    // TODO: vertically-center the grid in the window
+    const grid = document.querySelector('div');
+    styleGrid(grid);
+    resetGridSquares(grid);
+    createGridSquares(grid, squaresPerRow)
+    makeEtchable(grid);
 };
 
 const button = document.querySelector('button');
