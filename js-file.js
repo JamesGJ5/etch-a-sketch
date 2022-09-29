@@ -28,4 +28,7 @@ for (i = 0; i < squaresPerRow ** 2; i++) {
 let gridSquareList = grid.childNodes;
 
 gridSquareList.forEach((gridSquare) => {
+    gridSquare.addEventListener('mouseenter', () => {
+        gridSquare.style.backgroundColor = 'black';
+    });
 });
