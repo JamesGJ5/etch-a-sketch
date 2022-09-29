@@ -6,8 +6,7 @@ function styleGrid(grid) {
     grid.style.marginRight = 'auto';
     grid.style.display = 'flex';
     grid.style.flexWrap = 'wrap';
-    gridPercentageOfWindow = 100;
-    grid.style.width = `${gridPercentageOfWindow}vmin`;
+    grid.style.width = '100vmin';
     grid.style.height = grid.style.width;
 }
 
@@ -30,7 +29,7 @@ function createGrid(squaresPerRow) {
         const gridSquare = document.createElement('div');
 
         gridSquare.style.boxSizing = 'border-box';
-        gridSquare.style.width = `${gridPercentageOfWindow / squaresPerRow}vmin`;
+        gridSquare.style.width = `${100 / squaresPerRow}vmin`;
         gridSquare.style.height = gridSquare.style.width;
         gridSquare.style.border = 'solid black 3px';
 
