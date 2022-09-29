@@ -38,9 +38,8 @@ function makeEtchable(grid) {
 
     gridSquareList.forEach((gridSquare) => {
         gridSquare.addEventListener('mouseenter', () => {
-            randomRgbValues = `
-                ${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}`
-            gridSquare.style.backgroundColor = `rgb(${randomRgbValues})`;
+            randomHue = Math.random() * 360
+            gridSquare.style.backgroundColor = `hsl(${randomHue}, 100%, 50%)`;
         });
     });
 };
