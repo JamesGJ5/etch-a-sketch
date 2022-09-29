@@ -34,10 +34,15 @@ function createGrid(squaresPerRow) {
     });
 };
 
-createGrid(16)
+const button = document.querySelector('button');
+
+button.addEventListener('click', () => {
+    squaresPerRow = +prompt('How many squares would you like per grid row?');
+    createGrid(squaresPerRow);
+});
 
 // 1. DONE Put grid creation into a function
-// 2. Add button to HTML
+// 2. DONE Add button to HTML
 // 3. Add event listener to button to display prompt when clicked asking for 
 // grid size
 // 4. Call function with grid size
