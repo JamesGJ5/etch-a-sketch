@@ -34,7 +34,7 @@ function createGridSquares(grid, squaresPerRow) {
 }
 
 function makeEtchable(grid) {
-    let gridSquareList = grid.childNodes;
+    const gridSquareList = grid.childNodes;
 
     gridSquareList.forEach((gridSquare) => {
         gridSquare.addEventListener('mouseenter', () => {
