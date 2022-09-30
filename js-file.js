@@ -43,7 +43,7 @@ function updateLightness(gridSquare) {
         newLightness = '50';
         gridSquare.classList.add(newLightness);
 
-    } else if (currentLightness === '50' || currentLightness === '40' || currentLightness === '30' || currentLightness === '20' || currentLightness === '10') {
+    } else if (currentLightness > '0') {
         newLightness = `${+currentLightness - 10}`
         gridSquare.classList.remove(currentLightness);
         gridSquare.classList.add(newLightness);
