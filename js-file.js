@@ -39,7 +39,7 @@ function updateLightness(gridSquare) {
 
     let newLightness;
 
-    if (currentLightness === '') {
+    if (!currentLightness) {
         newLightness = '50';
         gridSquare.classList.add(newLightness);
 
