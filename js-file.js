@@ -92,7 +92,13 @@ let squaresPerRow;
 button.addEventListener('click', () => {
     squaresPerRow = Infinity;
     while (squaresPerRow > 100) {
-        squaresPerRow = +prompt('How many squares would you like per grid row?\n100 is the maximum.');
+        input = +prompt('How many squares would you like per grid row?\n100 is the maximum.');
+        if (1 <= input && input <= 100 && input % 1 === 0) {
+            squaresPerRow = input;
+        } else {
+            // TODO: allow clicking Cancel to stop from any further prompting being done and abort grid creation
+            alert('You gotta choose an integer in between 1 and 100');
+        };
     };
     createGrid(squaresPerRow);
 });
