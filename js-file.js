@@ -50,16 +50,16 @@ function makeEtchable(grid) {
             // TODO: make the below conditionals less verbose, group together statements, etc.
             let newLightness;
             if (currentLightness === '') {
-                const newLightness = '50';
+                newLightness = '50';
                 gridSquare.classList.add(newLightness);
 
             } else if (currentLightness === '50' || currentLightness === '40' || currentLightness === '30' || currentLightness === '20' || currentLightness === '10') {
-                const newLightness = `${+currentLightness - 10}`
+                newLightness = `${+currentLightness - 10}`
                 gridSquare.classList.remove(currentLightness);
                 gridSquare.classList.add(newLightness);
 
             } else if (currentLightness === '0') {
-                const newLightness = currentLightness;
+                newLightness = currentLightness;
             };
 
             gridSquare.style.backgroundColor = `hsl(${randomHue}, 100%, ${newLightness}%)`;
