@@ -39,7 +39,30 @@ function makeEtchable(grid) {
     gridSquareList.forEach((gridSquare) => {
         gridSquare.addEventListener('mouseenter', () => {
             randomHue = Math.random() * 360;
-            gridSquare.style.backgroundColor = `hsl(${randomHue}, 100%, 50%)`;
+
+            // Going to choose lightness (the L in HSL) based on the current 
+            // lightness of the gridSquare. Of course, if it hasn't been 
+            // hovered over yet, it has no lightness. For now, since gridSquare 
+            // doesn't have any other classes on it (and will not), I will make 
+            // its only class equal to a string containing the lightness percentage
+            const currentLightness = `${gridSquare.className}`;
+
+            // TODO: make the below conditionals less verbose, group together statements, etc.
+            let newLightness;
+            if (currentLightness === '') {
+                const newLightness = '50';
+                gridSquare.classList.add(newLightness);
+
+            } else if (currentLightness === '50' || currentLightness === '40' || currentLightness === '30' || currentLightness === '20' || currentLightness === '10') {
+                const newLightness = `${+currentLightness - 10}`
+                gridSquare.classList.remove(currentLightness);
+                gridSquare.classList.add(newLightness);
+
+            } else if (currentLightness === '0') {
+                const newLightness = currentLightness;
+            };
+
+            gridSquare.style.backgroundColor = `hsl(${randomHue}, 100%, ${newLightness}%)`;
         });
     });
 };
