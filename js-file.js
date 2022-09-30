@@ -35,7 +35,7 @@ function createGridSquares(grid, squaresPerRow) {
 
 function updateLightness(gridSquare) {
     // TODO: make the below conditionals less verbose, group together statements, etc.
-    const currentLightness = `${gridSquare.className}`;
+    const currentLightness = gridSquare.className;
 
     let newLightness;
 
