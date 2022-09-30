@@ -30,7 +30,7 @@ function createGridSquares(grid, squaresPerRow) {
         const gridSquare = document.createElement('div');
         styleGridSquare(gridSquare);
         grid.appendChild(gridSquare);
-    }
+    };
 };
 
 function makeEtchable(grid) {
@@ -38,7 +38,7 @@ function makeEtchable(grid) {
 
     gridSquareList.forEach((gridSquare) => {
         gridSquare.addEventListener('mouseenter', () => {
-            randomHue = Math.random() * 360
+            randomHue = Math.random() * 360;
             gridSquare.style.backgroundColor = `hsl(${randomHue}, 100%, 50%)`;
         });
     });
