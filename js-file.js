@@ -33,7 +33,7 @@ function createGridSquares(grid, squaresPerRow) {
     };
 };
 
-function makeEtchable(grid) {
+function enableEtching(grid) {
     const gridSquareList = grid.childNodes;
 
     gridSquareList.forEach((gridSquare) => {
@@ -67,7 +67,7 @@ function createGrid(squaresPerRow) {
     styleGrid(grid);
     resetGridSquares(grid);
     createGridSquares(grid, squaresPerRow);
-    makeEtchable(grid);
+    enableEtching(grid);
 };
 
 const button = document.querySelector('button');
