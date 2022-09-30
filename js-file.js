@@ -33,30 +33,36 @@ function createGridSquares(grid, squaresPerRow) {
     };
 };
 
+function updateLightness(gridSquare) {
+    // TODO: make the below conditionals less verbose, group together statements, etc.
+    const currentLightness = `${gridSquare.className}`;
+
+    let newLightness;
+
+    if (currentLightness === '') {
+        newLightness = '50';
+        gridSquare.classList.add(newLightness);
+
+    } else if (currentLightness === '50' || currentLightness === '40' || currentLightness === '30' || currentLightness === '20' || currentLightness === '10') {
+        newLightness = `${+currentLightness - 10}`
+        gridSquare.classList.remove(currentLightness);
+        gridSquare.classList.add(newLightness);
+
+    } else if (currentLightness === '0') {
+        newLightness = currentLightness;
+    };
+
+    return newLightness
+}
+
 function enableEtching(grid) {
     const gridSquareList = grid.childNodes;
 
     gridSquareList.forEach((gridSquare) => {
         gridSquare.addEventListener('mouseenter', () => {
+
             randomHue = Math.random() * 360;
-
-            const currentLightness = `${gridSquare.className}`;
-
-            // TODO: make the below conditionals less verbose, group together statements, etc.
-            let newLightness;
-            if (currentLightness === '') {
-                newLightness = '50';
-                gridSquare.classList.add(newLightness);
-
-            } else if (currentLightness === '50' || currentLightness === '40' || currentLightness === '30' || currentLightness === '20' || currentLightness === '10') {
-                newLightness = `${+currentLightness - 10}`
-                gridSquare.classList.remove(currentLightness);
-                gridSquare.classList.add(newLightness);
-
-            } else if (currentLightness === '0') {
-                newLightness = currentLightness;
-            };
-
+            const newLightness = updateLightness(gridSquare);
             gridSquare.style.backgroundColor = `hsl(${randomHue}, 100%, ${newLightness}%)`;
         });
     });
