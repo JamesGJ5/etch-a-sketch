@@ -6,7 +6,7 @@ function styleGrid(grid) {
     grid.style.marginRight = 'auto';
     grid.style.display = 'flex';
     grid.style.flexWrap = 'wrap';
-    grid.style.width = '100vmin';
+    grid.style.width = `${100 - buttonVminProportion}vmin`;
     grid.style.height = grid.style.width;
 };
 
@@ -20,7 +20,7 @@ function resetGridSquares(grid) {
 
 function styleGridSquare(gridSquare) {
     gridSquare.style.boxSizing = 'border-box';
-    gridSquare.style.width = `${100 / squaresPerRow}vmin`;
+    gridSquare.style.width = `${(100 - buttonVminProportion) / squaresPerRow}vmin`;
     gridSquare.style.height = gridSquare.style.width;
     gridSquare.style.border = 'solid black 1px';
 };
@@ -81,6 +81,8 @@ function createGrid(squaresPerRow) {
 const button = document.querySelector('button');
 button.style.display = 'block';
 button.style.width = '100%';
+const buttonVminProportion = 5;
+button.style.height = `${buttonVminProportion}vmin`;
 
 let squaresPerRow;
 button.addEventListener('click', () => {
