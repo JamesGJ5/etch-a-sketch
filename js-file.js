@@ -96,8 +96,8 @@ button.addEventListener('click', () => {
         if (1 <= input && input <= 100 && input % 1 === 0) {
             squaresPerRow = input;
         } else {
-            // TODO: allow clicking Cancel to stop from any further prompting being done and abort grid creation
-            alert('You gotta choose an integer in between 1 and 100');
+            reenterChoice = confirm('You gotta choose an integer in between 1 and 100. Wanna try this again?');
+            if (!reenterChoice) return;
         };
     };
     createGrid(squaresPerRow);
