@@ -2,12 +2,17 @@ const body = document.querySelector('body');
 body.style.margin = '0';
 
 function styleGrid(grid) {
-    grid.style.marginLeft = 'auto';
-    grid.style.marginRight = 'auto';
-    grid.style.display = 'flex';
-    grid.style.flexWrap = 'wrap';
-    grid.style.width = `${100 - buttonVminProportion}vmin`;
-    grid.style.height = grid.style.width;
+    if (!grid.classList.contains('present')) {
+
+        grid.style.marginLeft = 'auto';
+        grid.style.marginRight = 'auto';
+        grid.style.display = 'flex';
+        grid.style.flexWrap = 'wrap';
+        grid.style.width = `${100 - buttonVminProportion}vmin`;
+        grid.style.height = grid.style.width;
+        
+        grid.classList.add('present');
+    };
 };
 
 function resetGridSquares(grid) {
