@@ -68,9 +68,6 @@ function makeEtchable(grid) {
 };
 
 function createGrid(squaresPerRow) {
-    // TODO: vertically-center the grid in the window
-    // TODO: make sure button doesn't mean any vertical scrolling must be done to 
-    // see entire grid
     const grid = document.querySelector('div');
     styleGrid(grid);
     resetGridSquares(grid);
