@@ -34,21 +34,22 @@ function createGridSquares(grid, squaresPerRow) {
 };
 
 function updateLightness(gridSquare) {
-    // TODO: make the below conditionals less verbose, group together statements, etc.
     const currentLightness = gridSquare.className;
-
     let newLightness;
 
-    if (!currentLightness) {
-        newLightness = '50';
+    if (currentLightness !== '0') {
+
+        if (!currentLightness) {
+            newLightness = '50';
+
+        } else if (currentLightness > '0') {
+            newLightness = `${+currentLightness - 10}`
+            gridSquare.classList.remove(currentLightness);
+        };
+        
         gridSquare.classList.add(newLightness);
 
-    } else if (currentLightness > '0') {
-        newLightness = `${+currentLightness - 10}`
-        gridSquare.classList.remove(currentLightness);
-        gridSquare.classList.add(newLightness);
-
-    } else if (currentLightness === '0') {
+    } else {
         newLightness = currentLightness;
     };
 
