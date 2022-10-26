@@ -98,7 +98,7 @@ function enableEtching(grid) {
 };
 
 function createGrid(squaresPerRow) {
-    const grid = document.querySelector('div');
+    const grid = document.querySelector('div#container');
     styleGrid(grid);
     resetGridSquares(grid);
     createGridSquares(grid, squaresPerRow);
