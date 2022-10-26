@@ -1,5 +1,28 @@
 const body = document.querySelector('body');
+const button = document.querySelector('button');
+
 body.style.margin = '0';
+
+button.style.display = 'block';
+button.style.width = '100%';
+
+const buttonVminProportion = 5;
+button.style.height = `${buttonVminProportion}vmin`;
+
+let squaresPerRow;
+button.addEventListener('click', () => {
+    squaresPerRow = Infinity;
+    while (squaresPerRow > 100) {
+        input = +prompt('How many squares would you like per grid row?\n100 is the maximum.');
+        if (1 <= input && input <= 100 && input % 1 === 0) {
+            squaresPerRow = input;
+        } else {
+            reenterChoice = confirm('You gotta choose an integer in between 1 and 100. Wanna try this again?');
+            if (!reenterChoice) return;
+        };
+    };
+    createGrid(squaresPerRow);
+});
 
 function styleGrid(grid) {
     if (!grid.classList.contains('present')) {
@@ -81,24 +104,3 @@ function createGrid(squaresPerRow) {
     createGridSquares(grid, squaresPerRow);
     enableEtching(grid);
 };
-
-const button = document.querySelector('button');
-button.style.display = 'block';
-button.style.width = '100%';
-const buttonVminProportion = 5;
-button.style.height = `${buttonVminProportion}vmin`;
-
-let squaresPerRow;
-button.addEventListener('click', () => {
-    squaresPerRow = Infinity;
-    while (squaresPerRow > 100) {
-        input = +prompt('How many squares would you like per grid row?\n100 is the maximum.');
-        if (1 <= input && input <= 100 && input % 1 === 0) {
-            squaresPerRow = input;
-        } else {
-            reenterChoice = confirm('You gotta choose an integer in between 1 and 100. Wanna try this again?');
-            if (!reenterChoice) return;
-        };
-    };
-    createGrid(squaresPerRow);
-});
