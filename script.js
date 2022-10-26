@@ -88,11 +88,13 @@ function enableEtching(grid) {
     const gridSquareList = grid.childNodes;
 
     gridSquareList.forEach((gridSquare) => {
-        gridSquare.addEventListener('mouseenter', () => {
-
-            randomHue = Math.random() * 360;
-            const newLightness = updateLightness(gridSquare);
-            gridSquare.style.backgroundColor = `hsl(${randomHue}, 100%, ${newLightness}%)`;
+        events = ['mouseenter', 'click']
+        events.forEach((event) => {
+            gridSquare.addEventListener(event, () => {
+                randomHue = Math.random() * 360;
+                const newLightness = updateLightness(gridSquare);
+                gridSquare.style.backgroundColor = `hsl(${randomHue}, 100%, ${newLightness}%)`;
+            });
         });
     });
 };
