@@ -27,13 +27,13 @@ button.addEventListener('click', () => {
 function styleGrid(grid) {
     if (!grid.classList.contains('present')) {
 
+        grid.style.height =`${100 - buttonVminProportion}vmin`;
+        grid.style.width = grid.style.height;
         grid.style.marginLeft = 'auto';
         grid.style.marginRight = 'auto';
         grid.style.display = 'flex';
         grid.style.flexWrap = 'wrap';
-        grid.style.width = `${100 - buttonVminProportion}vmin`;
-        grid.style.height = grid.style.width;
-        
+
         grid.classList.add('present');
     };
 };
