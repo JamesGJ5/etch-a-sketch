@@ -1,2 +1,1 @@
-# etch-a-sketch
-Made for The Odin Project's guided project on Etch-a-Sketch
+Really basic project made to learn DOM manipulation.
